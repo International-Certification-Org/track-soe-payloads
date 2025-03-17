@@ -1,6 +1,6 @@
 // Import necessary modules
 const express = require("express");
-const url = require("url");
+const bodyParser = require('body-parser');
 
 // Import route handlers
 const handleHome = require("./routes/handleHome");
@@ -14,8 +14,8 @@ const handleGetExamData = require("./routes/handleGetExamData");
 const app = express();
 
 // Middleware to parse JSON and URL-encoded bodies
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '50mb' })); // Set JSON payload limit to 1150MB
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true })); // Set URL-encoded payload limit to 1150MB
 
 // Route Handlers
 

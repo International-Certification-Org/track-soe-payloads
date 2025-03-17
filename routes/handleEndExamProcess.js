@@ -9,6 +9,9 @@ function handleEndExamProcess(req, res) {
   console.log("URL:", req.url);
   console.log("Query Parameters:", parsedUrl.query);
   console.log("Body:", req.body);
+  console.log("screen_images:", JSON.stringify(req.body.exam_process.screen_images, null, 2));
+  console.log("camera_images:", JSON.stringify(req.body.exam_process.camera_images, null, 2));
+  
   const responseData = {
     data: {
       exam_process: {
