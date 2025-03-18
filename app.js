@@ -26,7 +26,7 @@ app.get("/", handleHome);
 app.patch("/soe/exam-process/:uuid/start", handleStartExamProcess);
 
 // Update question
-app.patch("/soe/exam-process/:uuidExamProcess/questions/:uuidQuestion", handleUpdateQuestion);
+app.post("/soe/exam-process/:uuidExamProcess/questions/:uuidQuestion", handleUpdateQuestion);
 
 // Mouse movement update
 app.post("/soe/exam-process/:uuidExamProcess/update/mouse-movement", handleMouseMovement);
