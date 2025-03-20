@@ -1,7 +1,6 @@
-FROM node
+FROM node:18
 WORKDIR /app
-COPY package.json package-lock.json /app/
-RUN npm install
-RUN npm install -g nodemon
-COPY . /app
+COPY package.json package-lock.json ./
+RUN npm ci && npm install -g nodemon
+COPY . .
 CMD ["nodemon", "--legacy-watch", "app.js"]
